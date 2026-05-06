@@ -16,9 +16,9 @@
       --muted:#626872;
       --line:#e7edf2;
       --soft:#f6f9fb;
-      --blue:#dceff7;
-      --blue-2:#edf8fc;
-      --blue-3:#8cc9de;
+      --blue:#c8e8f5;
+      --blue-2:#e2f5fb;
+      --blue-3:#55b5d8;
       --navy:#263743;
       --gold:#b99a5f;
       --green:#d8f0d1;
@@ -272,7 +272,7 @@
 
           <div class="price">€50,95 EUR</div>
 
-          <div class="plug-label">Plug type - EU</div>
+          <div class="plug-label">Plug type - <span id="selectedPlug">EU</span></div>
           <div class="plugs">
             <button class="plug active">EU</button>
             <button class="plug">UK</button>
@@ -527,6 +527,7 @@
     };
 
     let cartQty = 0;
+    let selectedPlug = 'EU';
     let gifts = { tools:true, guarantee:true };
 
     function formatEUR(value){
@@ -584,7 +585,7 @@
           <img src="${product.image}" alt="${product.name}">
           <div>
             <h4>${product.name}</h4>
-            <p>${formatEUR(product.price)}</p>
+            <p>${formatEUR(product.price)} · Plug: ${selectedPlug}</p>
           </div>
           <div class="qty">
             <button onclick="setCartQty(cartQty-1)">−</button>
@@ -622,6 +623,9 @@
     document.querySelectorAll('.plug').forEach(btn=>btn.addEventListener('click',()=>{
       document.querySelectorAll('.plug').forEach(b=>b.classList.remove('active'));
       btn.classList.add('active');
+      selectedPlug = btn.textContent.trim();
+      document.getElementById('selectedPlug').textContent = selectedPlug;
+      renderCart();
     }));
 
     function swapImage(el){
