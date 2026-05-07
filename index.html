@@ -3,808 +3,272 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VapoLux Steam Pro</title>
+  <title>VapoLux Steam Pro | Effortless Steam Cleaning</title>
+  <meta name="description" content="VapoLux Steam Pro: handheld steam cleaner with 12 accessories, chemical-free cleaning and 90-day guarantee." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
+    :root{
+      --blue:#0c63e7;
+      --blue-soft:#eaf5ff;
+      --blue-soft-2:#f5fbff;
+      --ink:#101522;
+      --muted:#5b6472;
+      --line:#e5edf5;
+      --green:#c9f2d4;
+      --green-text:#24723d;
+      --pink:#efa4c9;
+      --white:#fff;
+      --shadow:0 18px 50px rgba(16,21,34,.08);
+      --radius:18px;
     }
 
-    body{
-      font-family:'Inter',sans-serif;
-      background:#f4fbff;
-      color:#111;
-      overflow-x:hidden;
-    }
-
-    img{
-      max-width:100%;
-      display:block;
-    }
-
-    a{
-      text-decoration:none;
-      color:inherit;
-    }
-
-    .announcement{
-      background:#8fd5f2;
-      color:#163847;
-      text-align:center;
-      padding:12px;
-      font-size:13px;
-      font-weight:700;
-      letter-spacing:.08em;
-    }
-
-    .header{
-      background:white;
-      border-bottom:1px solid #dceaf1;
-      position:sticky;
-      top:0;
-      z-index:100;
-    }
-
-    .header-inner{
-      max-width:1500px;
-      margin:auto;
-      height:86px;
-      padding:0 30px;
-
-      display:grid;
-      grid-template-columns:1fr auto 1fr;
-      align-items:center;
-    }
-
-    .nav{
-      display:flex;
-      gap:28px;
-      align-items:center;
-    }
-
-    .nav a{
-      font-size:14px;
-      font-weight:500;
-      color:#324854;
-      transition:.2s;
-    }
-
-    .nav a:hover{
-      color:#4aaed4;
-    }
-
-    .logo{
-      width:230px;
-    }
-
-    .icons{
-      display:flex;
-      justify-content:flex-end;
-      gap:10px;
-    }
-
-    .icon-btn{
-      width:42px;
-      height:42px;
-      border-radius:50%;
-      border:none;
-      background:transparent;
-      cursor:pointer;
-
-      display:flex;
-      align-items:center;
-      justify-content:center;
-
-      transition:.2s;
-    }
-
-    .icon-btn:hover{
-      background:#dff4fc;
-    }
-
-    .icon-btn svg{
-      width:22px;
-      height:22px;
-      stroke:#1c2e36;
-      fill:none;
-      stroke-width:2;
-    }
-
-    .hero{
-      max-width:1500px;
-      margin:auto;
-
-      display:grid;
-      grid-template-columns:1.05fr .95fr;
-
-      gap:60px;
-
-      padding:40px 30px 70px;
-    }
-
-    .gallery{
-      position:sticky;
-      top:120px;
-    }
-
-    .main-image{
-      background:white;
-      border-radius:28px;
-      overflow:hidden;
-      box-shadow:0 20px 50px rgba(0,0,0,.08);
-    }
-
-    .main-image img{
-      width:100%;
-      aspect-ratio:1/1;
-      object-fit:contain;
-      padding:20px;
-    }
-
-    .thumbs{
-      display:flex;
-      gap:12px;
-      margin-top:16px;
-    }
-
-    .thumb{
-      width:92px;
-      height:92px;
-      border-radius:14px;
-      overflow:hidden;
-      cursor:pointer;
-      border:2px solid transparent;
-      background:white;
-      padding:5px;
-      transition:.2s;
-    }
-
-    .thumb:hover{
-      transform:translateY(-3px);
-    }
-
-    .thumb.active{
-      border-color:#67bddd;
-    }
-
-    .product-card{
-      background:white;
-      border-radius:28px;
-      padding:35px;
-      box-shadow:0 15px 40px rgba(0,0,0,.06);
-    }
-
-    .rating{
-      margin-bottom:14px;
-      font-size:14px;
-      color:#555;
-    }
-
-    .stars{
-      color:#ffcc00;
-    }
-
-    h1{
-      font-size:56px;
-      line-height:1;
-      margin-bottom:18px;
-      font-weight:800;
-      letter-spacing:-.05em;
-    }
-
-    .lead{
-      font-size:18px;
-      line-height:1.6;
-      color:#48555d;
-      margin-bottom:24px;
-    }
-
-    .checks{
-      list-style:none;
-      margin-bottom:28px;
-    }
-
-    .checks li{
-      margin:14px 0;
-      font-size:16px;
-      display:flex;
-      gap:10px;
-      align-items:center;
-    }
-
-    .check{
-      width:24px;
-      height:24px;
-      border-radius:50%;
-      background:#bfe8f8;
-
-      display:flex;
-      align-items:center;
-      justify-content:center;
-
-      color:#156b8d;
-      font-weight:800;
-      flex:none;
-    }
-
-    .badges{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:12px;
-      margin-bottom:25px;
-    }
-
-    .badge{
-      background:#eaf8fd;
-      border:1px solid #cbe9f5;
-      border-radius:16px;
-      padding:16px;
-      font-weight:600;
-
-      transition:.2s;
-    }
-
-    .badge:hover{
-      transform:translateY(-3px);
-    }
-
-    .price{
-      font-size:40px;
-      font-weight:800;
-      color:#467990;
-      margin:26px 0;
-    }
-
-    .plug-title{
-      margin-bottom:12px;
-      font-weight:700;
-    }
-
-    .plugs{
-      display:flex;
-      gap:12px;
-      margin-bottom:25px;
-      flex-wrap:wrap;
-    }
-
-    .plug{
-      border:none;
-      padding:14px 22px;
-      border-radius:999px;
-      cursor:pointer;
-      background:white;
-      border:1px solid #cfdde4;
-      font-weight:700;
-      transition:.2s;
-    }
-
-    .plug:hover{
-      transform:translateY(-2px);
-    }
-
-    .plug.active{
-      background:#223846;
-      color:white;
-    }
-
-    .buy-btn{
-      width:100%;
-      border:none;
-      background:#223846;
-      color:white;
-      padding:20px;
-      border-radius:18px;
-      font-size:17px;
-      font-weight:800;
-      cursor:pointer;
-      transition:.2s;
-    }
-
-    .buy-btn:hover{
-      transform:translateY(-2px);
-      background:#152731;
-    }
-
-    .payments{
-      display:flex;
-      gap:8px;
-      flex-wrap:wrap;
-      margin:22px 0;
-    }
-
-    .pay{
-      background:white;
-      border:1px solid #d9e4ea;
-      border-radius:8px;
-      padding:8px 10px;
-      font-size:11px;
-      font-weight:700;
-    }
-
-    .shipping{
-      background:#d9f2d3;
-      padding:16px;
-      border-radius:999px;
-      text-align:center;
-      font-weight:700;
-      color:#38663f;
-      margin-bottom:25px;
-    }
-
-    .bonus{
-      display:grid;
-      grid-template-columns:70px 1fr auto;
-      gap:15px;
-      align-items:center;
-
-      padding:18px 0;
-
-      border-bottom:1px solid #e7eef2;
-    }
-
-    .bonus img{
-      width:64px;
-      height:64px;
-      object-fit:cover;
-      border-radius:14px;
-    }
-
-    .bonus h3{
-      font-size:18px;
-      line-height:1.2;
-    }
-
-    .toggle{
-      width:58px;
-      height:32px;
-      border-radius:999px;
-      background:#5bb9db;
-      position:relative;
-      cursor:pointer;
-    }
-
-    .toggle::after{
-      content:"";
-      width:26px;
-      height:26px;
-      border-radius:50%;
-      background:white;
-      position:absolute;
-      top:3px;
-      left:29px;
-    }
-
-    .section{
-      padding:90px 30px;
-    }
-
-    .split{
-      max-width:1300px;
-      margin:auto;
-
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:60px;
-      align-items:center;
-    }
-
-    .split img{
-      border-radius:26px;
-      box-shadow:0 20px 50px rgba(0,0,0,.08);
-    }
-
-    .split h2{
-      font-size:48px;
-      line-height:1.05;
-      margin-bottom:18px;
-      letter-spacing:-.05em;
-    }
-
-    .split p{
-      font-size:17px;
-      line-height:1.8;
-      color:#4f5a61;
-      margin-bottom:14px;
-    }
-
-    .reviews{
-      max-width:1300px;
-      margin:auto;
-
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:24px;
-    }
-
-    .review{
-      background:white;
-      padding:24px;
-      border-radius:24px;
-      box-shadow:0 12px 30px rgba(0,0,0,.05);
-
-      transition:.2s;
-    }
-
-    .review:hover{
-      transform:translateY(-5px);
-    }
-
-    .review h3{
-      margin:12px 0;
-      font-size:20px;
-    }
-
-    .review p{
-      line-height:1.7;
-      color:#555;
-    }
-
-    .footer{
-      padding:50px 20px;
-      text-align:center;
-      background:#edf8fc;
-      border-top:1px solid #dbeaf0;
-    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,Arial,sans-serif;color:var(--ink);background:#fff;-webkit-font-smoothing:antialiased}
+    img,video{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
+    button{font-family:inherit}
+
+    .container{width:min(1500px,94vw);margin:0 auto}
+    .narrow{width:min(1120px,92vw);margin:0 auto}
+
+    .announcement{background:var(--blue);color:#fff;text-align:center;padding:14px 12px;font-size:14px;font-weight:900;letter-spacing:.06em;text-transform:uppercase}
+    .header{height:100px;background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:60}
+    .header-inner{height:100%;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:28px;width:min(1500px,94vw);margin:auto}
+    .nav{display:flex;gap:28px;align-items:center;font-size:14px;font-weight:700;color:#171b25;white-space:nowrap}
+    .nav a{height:100px;display:flex;align-items:center;border-bottom:2px solid transparent;transition:.2s}
+    .nav a:hover,.nav a.active{color:var(--blue);border-color:var(--blue)}
+    .logo{width:230px;max-height:58px;object-fit:contain}
+    .icons{display:flex;gap:14px;justify-content:flex-end;align-items:center}
+    .icon-btn{width:42px;height:42px;border:0;background:transparent;border-radius:999px;cursor:pointer;display:flex;align-items:center;justify-content:center;position:relative;color:#111827;transition:.2s}
+    .icon-btn:hover{background:var(--blue-soft);color:var(--blue);transform:translateY(-1px)}
+    .icon-btn svg{width:23px;height:23px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .cart-count{position:absolute;top:0;right:0;background:var(--blue);color:#fff;border:2px solid #fff;border-radius:999px;min-width:18px;height:18px;font-size:11px;font-weight:800;display:none;align-items:center;justify-content:center}
+
+    .hero{display:grid;grid-template-columns:1.03fr .97fr;gap:36px;padding:46px 0 28px;align-items:start}
+    .gallery-card{position:sticky;top:124px}
+    .main-media{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:var(--shadow)}
+    .main-media img{width:100%;aspect-ratio:1/1;object-fit:cover}
+    .thumbs{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:16px}
+    .thumb{height:112px;border:2px solid transparent;border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 8px 24px rgba(16,21,34,.06);cursor:pointer;transition:.22s;padding:0}
+    .thumb img{width:100%;height:100%;object-fit:cover}
+    .thumb:hover{transform:translateY(-3px)}
+    .thumb.active{border-color:var(--blue);box-shadow:0 0 0 4px rgba(12,99,231,.12)}
+    .thumb.contain img{object-fit:contain;padding:8px;background:#fff}
+
+    .product-card{border:1px solid var(--line);border-radius:18px;background:#fff;box-shadow:var(--shadow);padding:34px 38px}
+    .rating{display:flex;gap:8px;align-items:center;font-size:13px;color:#4b5563;margin-bottom:13px}.stars{color:#ffbf00;letter-spacing:1px}
+    h1{font-size:48px;line-height:1.02;margin:0 0 18px;letter-spacing:-.045em;font-weight:900}
+    .lead{font-size:18px;line-height:1.55;color:#343b49;margin:0 0 22px}
+    .checks{list-style:none;margin:0 0 26px;padding:0}.checks li{display:flex;align-items:center;gap:12px;margin:14px 0;font-size:17px;font-weight:700}.check-dot{width:24px;height:24px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;flex:none}
+    .badges{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:24px 0}.badge{background:var(--blue-soft-2);border:1px solid var(--line);border-radius:14px;padding:16px;display:flex;align-items:center;justify-content:center;gap:11px;font-weight:800;transition:.2s}.badge:hover{transform:translateY(-2px);background:var(--blue-soft)}.badge svg{width:22px;height:22px;stroke:var(--blue);fill:none;stroke-width:2}
+    .price{color:var(--blue);font-size:36px;font-weight:900;margin:22px 0 14px}.plug-label{font-weight:800;margin-bottom:12px}.plugs{display:flex;gap:12px;margin-bottom:22px;flex-wrap:wrap}.plug{min-width:78px;padding:13px 22px;border:1.5px solid #cfd8e3;background:#fff;border-radius:10px;font-weight:800;cursor:pointer;transition:.2s}.plug:hover{border-color:var(--blue);transform:translateY(-2px)}.plug.active{background:var(--blue);border-color:var(--blue);color:#fff;box-shadow:0 0 0 4px rgba(12,99,231,.12)}
+    .buy-btn{width:100%;border:0;border-radius:12px;background:var(--blue);color:#fff;padding:18px 22px;font-size:17px;font-weight:900;letter-spacing:.03em;cursor:pointer;transition:.2s;box-shadow:0 14px 28px rgba(12,99,231,.22)}.buy-btn:hover{background:#084db7;transform:translateY(-2px)}.buy-btn.added{background:#258548}
+    .payments{display:flex;gap:9px;flex-wrap:wrap;justify-content:center;margin:20px 0}.pay{border:1px solid var(--line);border-radius:7px;background:#fff;padding:7px 11px;font-size:11px;font-weight:800}.ship-banner{background:var(--green);color:var(--green-text);border-radius:12px;padding:16px;text-align:center;font-size:16px;font-weight:900;margin-top:16px}
+
+    .bonus-panel{border:1px solid var(--line);border-radius:16px;background:#fff;box-shadow:var(--shadow);margin:18px 0 34px;overflow:hidden}.bonus-row{display:grid;grid-template-columns:74px 1fr auto;gap:18px;align-items:center;padding:18px 22px;border-bottom:1px solid var(--line)}.bonus-row:last-child{border-bottom:0}.bonus-row img{width:70px;height:70px;object-fit:contain;border-radius:10px;background:#fff}.bonus-row h3{font-size:18px;margin:0 0 5px;font-weight:900;line-height:1.15}.bonus-row p{margin:0;color:var(--muted);font-size:14px}.toggle{width:58px;height:32px;border:0;border-radius:999px;background:#cfd7df;position:relative;cursor:pointer;transition:.2s}.toggle:after{content:"";position:absolute;top:3px;left:3px;width:26px;height:26px;background:#fff;border-radius:50%;transition:.2s;box-shadow:0 2px 8px rgba(0,0,0,.15)}.toggle.active{background:var(--blue)}.toggle.active:after{left:29px}.bonus-row.inactive{opacity:.55}.bonus-row.inactive h3{text-decoration:line-through}
+
+    .section{padding:76px 0}.soft{background:#f6f8fb}.split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}.split img,.split video{width:100%;border-radius:18px;box-shadow:var(--shadow);object-fit:cover}.split img{aspect-ratio:4/3}.split h2,.center-title{font-size:40px;line-height:1.08;margin:0 0 18px;letter-spacing:-.04em;font-weight:900}.split p{font-size:16px;line-height:1.7;color:#4d5564}.x-list{list-style:none;margin:22px 0 0;padding:0}.x-list li{margin:13px 0;color:#4d5564;line-height:1.5}.x-list b{color:#111827}.x{color:#ef3158;font-weight:900;margin-right:8px}
+
+    .video-section{background:#111827;color:#fff;padding:78px 0;text-align:center}.video-section p{color:#d1d5db;max-width:680px;margin:0 auto 32px;line-height:1.6}.video-grid{display:grid;grid-template-columns:repeat(2,minmax(250px,360px));gap:24px;justify-content:center}.video-card{background:#1f2937;border-radius:22px;padding:12px;box-shadow:0 20px 60px rgba(0,0,0,.25)}.video-card video{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:16px;background:#000}.video-card h3{font-size:17px;margin:14px 4px 6px;text-align:left}.video-card p{font-size:13px;text-align:left;margin:0 4px 8px;color:#d1d5db}
+
+    .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.review{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px;box-shadow:0 10px 28px rgba(16,21,34,.05);transition:.2s}.review:hover{transform:translateY(-5px);box-shadow:var(--shadow)}.review h3{margin:10px 0;font-size:19px}.review p{color:#4d5564;line-height:1.6}.review small{font-weight:800;color:#111827}
+    .feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.feature{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px;text-align:center}.feature h3{margin:0 0 9px}.feature p{margin:0;color:#5b6472;line-height:1.5;font-size:14px}
+    .compare{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}.compare img{border-radius:18px;box-shadow:var(--shadow)}
+    .faq-list{max-width:760px;margin:28px auto 0;text-align:left}.faq-list details{border-top:1px solid var(--line);padding:17px 0}.faq-list details:last-child{border-bottom:1px solid var(--line)}.faq-list summary{cursor:pointer;font-weight:900;list-style:none}.faq-list p{color:#4d5564;line-height:1.6}
+    .footer{background:var(--blue);color:#fff;padding:28px 20px}.footer-inner{display:flex;justify-content:space-between;gap:18px;align-items:center;flex-wrap:wrap}.footer b{font-weight:900}.footer span{display:flex;gap:8px;align-items:center}
+
+    .cart-drawer{position:fixed;inset:0;z-index:120;pointer-events:none}.cart-overlay{position:absolute;inset:0;background:rgba(16,21,34,.38);opacity:0;transition:.25s}.cart-panel{position:absolute;right:0;top:0;height:100%;width:min(440px,94vw);background:#fff;transform:translateX(105%);transition:.28s;box-shadow:-24px 0 60px rgba(0,0,0,.16);display:flex;flex-direction:column}.cart-drawer.open{pointer-events:auto}.cart-drawer.open .cart-overlay{opacity:1}.cart-drawer.open .cart-panel{transform:translateX(0)}.cart-head{display:flex;justify-content:space-between;align-items:center;padding:22px;border-bottom:1px solid var(--line)}.cart-head h3{margin:0}.cart-close{width:36px;height:36px;border:0;border-radius:50%;font-size:22px;cursor:pointer}.cart-body{padding:22px;flex:1;overflow:auto}.cart-item{display:grid;grid-template-columns:72px 1fr auto;gap:14px;align-items:center}.cart-item img{width:72px;height:72px;object-fit:cover;border-radius:12px}.cart-item h4{margin:0 0 6px}.cart-item p{margin:0;color:var(--blue);font-weight:900}.qty{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}.qty button{width:30px;height:30px;border:0;background:#fff;cursor:pointer}.qty span{min-width:25px;display:flex;align-items:center;justify-content:center;font-weight:900}.cart-gifts{margin-top:22px;background:var(--blue-soft);border-radius:14px;padding:16px}.cart-gifts b{display:block;margin-bottom:8px}.cart-gifts div{margin:6px 0;color:#4d5564}.cart-foot{padding:22px;border-top:1px solid var(--line)}.subtotal{display:flex;justify-content:space-between;font-size:20px;font-weight:900;margin-bottom:14px}.checkout-final{width:100%;border:0;border-radius:12px;background:var(--blue);color:#fff;padding:16px;font-weight:900;font-size:16px;cursor:pointer}.empty-cart{text-align:center;color:#6b7280;padding:42px 0}.sticky-mobile{display:none}
 
     @media(max-width:980px){
-
-      .header-inner{
-        grid-template-columns:auto 1fr auto;
-      }
-
-      .nav{
-        display:none;
-      }
-
-      .logo{
-        width:160px;
-      }
-
-      .hero{
-        grid-template-columns:1fr;
-        gap:30px;
-        padding:20px 16px 50px;
-      }
-
-      .gallery{
-        position:static;
-      }
-
-      h1{
-        font-size:38px;
-      }
-
-      .product-card{
-        padding:24px;
-      }
-
-      .badges{
-        grid-template-columns:1fr;
-      }
-
-      .split{
-        grid-template-columns:1fr;
-      }
-
-      .split h2{
-        font-size:34px;
-      }
-
-      .reviews{
-        grid-template-columns:1fr;
-      }
-
-      .section{
-        padding:60px 16px;
-      }
-
+      body{padding-bottom:86px}.announcement{font-size:11px;padding:12px}.header{height:74px}.header-inner{grid-template-columns:auto 1fr auto;gap:10px}.nav{display:none}.logo{width:164px;max-height:44px}.icons{gap:4px}.icon-btn{width:36px;height:36px}.icon-btn svg{width:20px;height:20px}.hero{grid-template-columns:1fr;padding:18px 0 22px;gap:20px}.gallery-card{position:static}.main-media{border-radius:0;margin-left:-3vw;margin-right:-3vw;box-shadow:none;border-left:0;border-right:0}.main-media img{aspect-ratio:1/1;object-fit:cover}.thumbs{display:flex;overflow-x:auto;justify-content:flex-start;padding-bottom:8px}.thumb{min-width:78px;width:78px;height:78px}.product-card{padding:22px;border-radius:18px}h1{font-size:36px}.lead{font-size:16px}.checks li{font-size:15px}.badges{grid-template-columns:1fr 1fr;gap:10px}.badge{font-size:13px;padding:12px}.price{font-size:31px}.plug{min-width:66px;padding:11px 16px}.bonus-row{grid-template-columns:56px 1fr auto;padding:14px}.bonus-row img{width:54px;height:54px}.bonus-row h3{font-size:14px}.bonus-row p{font-size:12px}.section{padding:52px 0}.split,.compare{grid-template-columns:1fr;gap:26px}.split h2,.center-title{font-size:31px}.reviews,.feature-grid,.video-grid{grid-template-columns:1fr}.review{text-align:left}.video-grid{max-width:380px;margin:0 auto}.footer{padding-bottom:96px}.footer-inner{justify-content:center;text-align:center}.sticky-mobile{display:block;position:fixed;left:0;right:0;bottom:0;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);border-top:1px solid var(--line);box-shadow:0 -14px 36px rgba(16,21,34,.12);z-index:100;padding:10px 14px}.sticky-inner{display:grid;grid-template-columns:1fr 1.2fr;gap:10px;align-items:center}.sticky-price{font-weight:900;color:var(--blue);line-height:1.1}.sticky-price small{display:block;color:#4d5564;font-weight:700;font-size:11px}.sticky-mobile button{border:0;background:var(--blue);color:#fff;border-radius:999px;padding:15px;font-weight:900}
     }
-
   </style>
 </head>
 <body>
+  <div class="announcement">LAUNCH SALE | GET 50% OFF + FREE SHIPPING</div>
 
-<div class="announcement">
-  LAUNCH SALE | GET 50% OFF + FREE SHIPPING
-</div>
-
-<header class="header">
-
-  <div class="header-inner">
-
-    <nav class="nav">
-      <a href="#">Home</a>
-      <a href="#">VapoLux</a>
-      <a href="#">How It Works</a>
-      <a href="#">Reviews</a>
-      <a href="#">FAQ</a>
-    </nav>
-
-    <img class="logo" src="vapolux-logo.png">
-
-    <div class="icons">
-
-      <button class="icon-btn">
-        <svg viewBox="0 0 24 24">
-          <circle cx="11" cy="11" r="7"></circle>
-          <path d="M20 20l-3.5-3.5"></path>
-        </svg>
-      </button>
-
-      <button class="icon-btn">
-        <svg viewBox="0 0 24 24">
-          <circle cx="12" cy="8" r="4"></circle>
-          <path d="M4.5 21c1.5-4.2 4.2-6 7.5-6s6 1.8 7.5 6"></path>
-        </svg>
-      </button>
-
-      <button class="icon-btn">
-        <svg viewBox="0 0 24 24">
-          <path d="M6 8h12l-1 12H7L6 8z"></path>
-          <path d="M9 8a3 3 0 0 1 6 0"></path>
-        </svg>
-      </button>
-
+  <header class="header">
+    <div class="header-inner">
+      <nav class="nav">
+        <a href="#home">Home</a>
+        <a href="#product" class="active">VapoLux</a>
+        <a href="#how">How It Works</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <img class="logo" src="vapolux-logo.png" alt="VapoLux logo">
+      <div class="icons">
+        <button class="icon-btn" aria-label="Search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg></button>
+        <button class="icon-btn" aria-label="Account"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"></circle><path d="M4.5 21c1.5-4.2 4.2-6 7.5-6s6 1.8 7.5 6"></path></svg></button>
+        <button class="icon-btn" aria-label="Cart" onclick="openCart()"><svg viewBox="0 0 24 24"><path d="M6 8h12l-1 12H7L6 8z"></path><path d="M9 8a3 3 0 0 1 6 0"></path></svg><span class="cart-count" id="cartCount">0</span></button>
+      </div>
     </div>
+  </header>
 
-  </div>
-
-</header>
-
-<section class="hero">
-
-  <div class="gallery">
-
-    <div class="main-image">
-      <img id="mainImage" src="vapolux-mainproduct.png">
-    </div>
-
-    <div class="thumbs">
-
-      <img class="thumb active" src="vapolux-mainproduct.png">
-
-      <img class="thumb" src="vapolux-unboxing.png">
-
-      <img class="thumb" src="vapolux_advertaccessories.png">
-
-      <img class="thumb" src="vapolux-mainproduct.png">
-
-    </div>
-
-  </div>
-
-  <div class="product-card">
-
-    <div class="rating">
-      <span class="stars">★★★★★</span>
-      Rated 4.9/5 (1073 Reviews)
-    </div>
-
-    <h1>VapoLux Steam Pro</h1>
-
-    <p class="lead">
-      Deep clean grease, grime, grout lines, sink edges and hard-to-reach spaces using powerful steam — without harsh chemicals.
-    </p>
-
-    <ul class="checks">
-
-      <li>
-        <span class="check">✓</span>
-        Eliminates up to 99.9% of bacteria
-      </li>
-
-      <li>
-        <span class="check">✓</span>
-        Scrub-free deep cleaning in seconds
-      </li>
-
-      <li>
-        <span class="check">✓</span>
-        Safe, chemical-free cleaning
-      </li>
-
-    </ul>
-
-    <div class="badges">
-
-      <div class="badge">
-        🚚 Free shipping
+  <main id="home">
+    <section class="hero container" id="product">
+      <div class="gallery-card">
+        <div class="main-media"><img id="mainImage" src="Vapolux_ugc.png" alt="VapoLux Steam Pro in bathroom"></div>
+        <div class="thumbs">
+          <button class="thumb active"><img src="Vapolux_ugc.png" alt="VapoLux lifestyle"></button>
+          <button class="thumb contain"><img src="vapolux-mainproduct.png" alt="VapoLux product"></button>
+          <button class="thumb contain"><img src="vapolux_12_accessories.png" alt="VapoLux accessories"></button>
+          <button class="thumb contain"><img src="vapolux_advertaccessories.png" alt="VapoLux advert accessories"></button>
+          <button class="thumb contain"><img src="vapolux_vs_others.png" alt="VapoLux comparison"></button>
+        </div>
       </div>
 
-      <div class="badge">
-        ✓ 90-day guarantee
+      <div class="product-card">
+        <div class="rating"><span class="stars">★★★★★</span><span>4.9/5 (1,073 Reviews)</span></div>
+        <h1>VapoLux Steam Pro</h1>
+        <p class="lead">Deep clean grease, grime, grout lines, sink edges and hard-to-reach spaces using powerful steam — without harsh chemicals.</p>
+        <ul class="checks">
+          <li><span class="check-dot">✓</span> Eliminates up to 99.9% of bacteria</li>
+          <li><span class="check-dot">✓</span> Scrub-free deep cleaning in seconds</li>
+          <li><span class="check-dot">✓</span> Safe, chemical-free cleaning</li>
+        </ul>
+        <div class="badges">
+          <div class="badge"><svg viewBox="0 0 24 24"><path d="M3 7h11v10H3z"></path><path d="M14 11h4l3 3v3h-7z"></path><circle cx="7" cy="18" r="2"></circle><circle cx="18" cy="18" r="2"></circle></svg> Free shipping</div>
+          <div class="badge"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6z"></path><path d="M9 12l2 2 4-4"></path></svg> 90-day guarantee</div>
+        </div>
+        <div class="price">€50,95 EUR</div>
+        <div class="plug-label">Plug type - <span id="selectedPlug">EU</span></div>
+        <div class="plugs"><button class="plug active">EU</button><button class="plug">US</button><button class="plug">UK</button><button class="plug">AU</button></div>
+        <button class="buy-btn add-cart-btn">🛒 ADD TO CART</button>
+        <div class="payments"><span class="pay">AMEX</span><span class="pay">Apple Pay</span><span class="pay">G Pay</span><span class="pay">PayPal</span><span class="pay">VISA</span><span class="pay">MC</span></div>
+        <div class="ship-banner">🚚 Ships tomorrow if ordered today</div>
       </div>
-
-    </div>
-
-    <div class="price">
-      €50,95 EUR
-    </div>
-
-    <div class="plug-title">
-      Plug type
-    </div>
-
-    <div class="plugs">
-
-      <button class="plug active">EU</button>
-      <button class="plug">US</button>
-      <button class="plug">UK</button>
-      <button class="plug">AU</button>
-
-    </div>
-
-    <button class="buy-btn">
-      ADD TO CART
-    </button>
-
-    <div class="payments">
-
-      <div class="pay">AMEX</div>
-      <div class="pay">Apple Pay</div>
-      <div class="pay">Google Pay</div>
-      <div class="pay">PayPal</div>
-      <div class="pay">VISA</div>
-
-    </div>
-
-    <div class="shipping">
-      🚚 Ships tomorrow if ordered today
-    </div>
-
-    <div class="bonus">
-
-      <img src="vapolux_advertaccessories.png">
-
-      <h3>
-        12 Free Cleaning Tools Included
-      </h3>
-
-      <div class="toggle"></div>
-
-    </div>
-
-    <div class="bonus">
-
-      <img src="vapolux-unboxing.png">
-
-      <h3>
-        90 Day Money Back Guarantee
-      </h3>
-
-      <div class="toggle"></div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<section class="section">
-
-  <div class="split">
-
-    <img src="vapolux-unboxing.png">
-
-    <div>
-
-      <h2>
-        What If Deep Cleaning Didn’t Mean Endless Scrubbing?
-      </h2>
-
-      <p>
-        VapoLux uses concentrated high-pressure steam to loosen grease, grime and buildup fast — making your kitchen, bathroom and hard-to-reach spaces feel easier to clean.
-      </p>
-
-      <p>
-        No harsh chemicals. No endless scrubbing. Just powerful steam cleaning.
-      </p>
-
-    </div>
-
-  </div>
-
-</section>
-
-<section class="section">
-
-  <div class="reviews">
-
-    <div class="review">
-
-      <div class="stars">★★★★★</div>
-
-      <h3>
-        Best cleaning gadget I’ve bought
-      </h3>
-
-      <p>
-        “Way better than expected. I use it around my kitchen and shower every week.”
-      </p>
-
-    </div>
-
-    <div class="review">
-
-      <div class="stars">★★★★★</div>
-
-      <h3>
-        Super satisfying to use
-      </h3>
-
-      <p>
-        “The steam breaks down grease so fast. Saves me a lot of time.”
-      </p>
-
-    </div>
-
-    <div class="review">
-
-      <div class="stars">★★★★★</div>
-
-      <h3>
-        Actually useful
-      </h3>
-
-      <p>
-        “Most gadgets are useless. This one genuinely works.”
-      </p>
-
-    </div>
-
-  </div>
-
-</section>
-
-<footer class="footer">
-
-  <p>
-    © 2026 VapoLux
-  </p>
-
-</footer>
-
-<script>
-
-const thumbs = document.querySelectorAll('.thumb');
-const mainImage = document.getElementById('mainImage');
-
-thumbs.forEach(thumb => {
-
-  thumb.addEventListener('click', () => {
-
-    thumbs.forEach(t => t.classList.remove('active'));
-
-    thumb.classList.add('active');
-
-    mainImage.src = thumb.src;
-
-  });
-
-});
-
-const plugs = document.querySelectorAll('.plug');
-
-plugs.forEach(plug => {
-
-  plug.addEventListener('click', () => {
-
-    plugs.forEach(p => p.classList.remove('active'));
-
-    plug.classList.add('active');
-
-  });
-
-});
-
-</script>
-
+    </section>
+
+    <section class="container">
+      <div class="bonus-panel">
+        <div class="bonus-row" id="giftTools"><img src="vapolux_12_accessories.png" alt="12 accessories"><div><h3>12 Free Cleaning Tools Included</h3><p>Everything you need for every surface.</p></div><button class="toggle active" onclick="toggleGift('giftTools', this)" aria-label="Toggle tools"></button></div>
+        <div class="bonus-row" id="giftGuarantee"><img src="vapolux-unboxing.png" alt="Guarantee"><div><h3>90 Day Money Back Guarantee</h3><p>Not satisfied? Get a full refund.</p></div><button class="toggle active" onclick="toggleGift('giftGuarantee', this)" aria-label="Toggle guarantee"></button></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="split container">
+        <img src="vapolux_advertaccessories.png" alt="VapoLux accessories and features">
+        <div>
+          <h2>What If Deep Cleaning Didn’t Mean Endless Scrubbing?</h2>
+          <p>VapoLux uses concentrated high-pressure steam to loosen grease, grime and buildup fast — making your kitchen, bathroom and hard-to-reach spaces feel easier to clean.</p>
+          <p>No harsh chemicals. No endless scrubbing. Just powerful steam cleaning.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft">
+      <div class="split narrow">
+        <div>
+          <h2>You’ve tried everything.</h2>
+          <ul class="x-list">
+            <li><span class="x">✕</span><b>Sprays and degreasers</b> — strong smell, harsh chemicals and still not enough.</li>
+            <li><span class="x">✕</span><b>Sponges and brushes</b> — too much scrubbing, too much time.</li>
+            <li><span class="x">✕</span><b>Paper towels and wipes</b> — fine for the surface, useless for deep grime.</li>
+            <li><span class="x">✕</span><b>Cheap gadgets</b> — weak performance and annoying to use.</li>
+          </ul>
+        </div>
+        <img src="vapolux_vs_others.png" alt="VapoLux vs other products">
+      </div>
+    </section>
+
+    <section class="video-section" id="how">
+      <div class="container">
+        <h2 class="center-title">See How Easy It Is To Use</h2>
+        <p>Fill, heat, choose the right accessory and clean with focused steam. These short demos show the product in real use.</p>
+        <div class="video-grid">
+          <div class="video-card"><video src="vapolux_easytoset.mp4" controls playsinline preload="metadata"></video><h3>1. Fill & Heat</h3><p>Setup takes only a few minutes.</p></div>
+          <div class="video-card"><video src="vapolux_easytoset2.mp4" controls playsinline preload="metadata"></video><h3>2. Clean with Steam</h3><p>Use the accessory that fits each surface.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section center" id="reviews">
+      <div class="container">
+        <h2 class="center-title">Join 12,847 People Who Made Deep Cleaning Easier with VapoLux</h2>
+        <div style="margin:10px 0 34px">Excellent <b>4.8 / 5</b> <span class="stars">★★★★★</span></div>
+        <div class="reviews">
+          <div class="review"><div class="stars">★★★★★</div><h3>Best cleaning gadget I’ve bought</h3><p>“Way better than expected. I use it around my kitchen and shower every week.”</p><small>— Jessica M.</small></div>
+          <div class="review"><div class="stars">★★★★★</div><h3>Super satisfying to use</h3><p>“The steam breaks down grease so fast. Saves me a lot of time.”</p><small>— Daniel K.</small></div>
+          <div class="review"><div class="stars">★★★★★</div><h3>Actually useful</h3><p>“Most gadgets are useless. This one genuinely works.”</p><small>— Sarah T.</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft center">
+      <div class="container">
+        <h2 class="center-title">What Makes VapoLux Different</h2>
+        <div class="feature-grid">
+          <div class="feature"><h3>High-Pressure Steam</h3><p>Helps loosen grease, grime and stuck-on messes faster.</p></div>
+          <div class="feature"><h3>Deep-Cleans Tight Spaces</h3><p>Designed for sink edges, tile lines, seams and corners.</p></div>
+          <div class="feature"><h3>Multi-Surface Cleaning</h3><p>Kitchen, bathroom, tile, glass, grout, fixtures and more.</p></div>
+          <div class="feature"><h3>12-Piece Kit</h3><p>Attachments for different jobs without buying extra tools.</p></div>
+          <div class="feature"><h3>Chemical-Less Cleaning</h3><p>Reduce reliance on harsh cleaning chemicals.</p></div>
+          <div class="feature"><h3>Compact & Easy</h3><p>Handheld, lightweight and simple for quick cleaning sessions.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="compare narrow">
+        <div><h2>VapoLux vs. Everything Else</h2><p>Most cheap cleaning gadgets look helpful until you try to clean grease, grout, seams and tight corners. VapoLux is designed for the messes regular sprays, wipes and brushes struggle with.</p></div>
+        <img src="vapolux_vs_others.png" alt="VapoLux comparison">
+      </div>
+    </section>
+
+    <section class="section soft">
+      <div class="split narrow">
+        <img src="vapolux-unboxing.png" alt="VapoLux unboxing">
+        <div><h2>The VapoLux 90-Day Risk-Free Guarantee</h2><p>Try VapoLux in your kitchen, bathroom, tile lines, sink edges, shower corners and hard-to-reach spots. If you don’t feel like VapoLux makes deep cleaning easier within 90 days of delivery, we’ll make it right.</p><p>✅ 90-day trial<br>✅ Use it on real messes<br>✅ Simple support if you need help<br>✅ Risk-free purchase</p></div>
+      </div>
+    </section>
+
+    <section class="section center" id="faq">
+      <div class="narrow">
+        <h2 class="center-title">Questions? We’ve Got Answers.</h2>
+        <div class="faq-list">
+          <details><summary>What can VapoLux clean?</summary><p>Kitchen grease, bathroom grime, grout lines, tiles, glass, sink edges, shower corners, stovetops, upholstery, mattresses, car details and tight spaces.</p></details>
+          <details><summary>Does VapoLux use chemicals?</summary><p>No. It uses water and high-temperature steam.</p></details>
+          <details><summary>How fast does it heat up?</summary><p>About 3 to 5 minutes.</p></details>
+          <details><summary>How long does the steam last?</summary><p>Around 8 to 10 minutes of continuous steam depending on usage.</p></details>
+          <details><summary>Does it include accessories?</summary><p>Yes. Today’s bundle includes 12 cleaning tools and accessories.</p></details>
+          <details><summary>Can I use it in the car?</summary><p>Yes, for car detailing areas, seats, mats, vents and hard-to-reach corners. Test delicate materials first.</p></details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="footer-inner container"><b>© 2026 VapoLux. All rights reserved.</b><span>🚚 Free shipping worldwide</span><span>🛡️ 90-day money back guarantee</span></div></footer>
+
+  <div class="cart-drawer" id="cartDrawer"><div class="cart-overlay" onclick="closeCart()"></div><aside class="cart-panel"><div class="cart-head"><h3>Your cart</h3><button class="cart-close" onclick="closeCart()">×</button></div><div class="cart-body" id="cartBody"></div><div class="cart-foot"><div class="subtotal"><span>Subtotal</span><span id="cartSubtotal">€0,00</span></div><button class="checkout-final checkout-btn">CHECKOUT SECURELY</button></div></aside></div>
+  <div class="sticky-mobile"><div class="sticky-inner"><div class="sticky-price">€50,95 <small>Free shipping today</small></div><button class="add-cart-btn">ADD TO CART</button></div></div>
+
+  <script>
+    const CHECKOUT_URL = "https://buy.stripe.com/REPLACE_WITH_YOUR_STRIPE_PAYMENT_LINK";
+    const product = { name:'VapoLux Steam Pro', price:50.95, image:'Vapolux_ugc.png' };
+    let cartQty = 0;
+    let selectedPlug = 'EU';
+    let gifts = { tools:true, guarantee:true };
+
+    function formatEUR(value){return new Intl.NumberFormat('es-ES',{style:'currency',currency:'EUR'}).format(value)}
+    function openCart(){document.getElementById('cartDrawer').classList.add('open');renderCart()}
+    function closeCart(){document.getElementById('cartDrawer').classList.remove('open')}
+    function setCartQty(qty){cartQty=Math.max(0,qty);updateCartCount();renderCart()}
+    function updateCartCount(){const count=document.getElementById('cartCount');count.textContent=cartQty;count.style.display=cartQty>0?'flex':'none'}
+    function addToCart(){cartQty=Math.max(1,cartQty+1);updateCartCount();document.querySelectorAll('.add-cart-btn').forEach(btn=>{btn.classList.add('added');btn.textContent='ADDED ✓';setTimeout(()=>{btn.classList.remove('added');btn.textContent='ADD TO CART'},900)});openCart()}
+    function renderCart(){const body=document.getElementById('cartBody');const subtotal=document.getElementById('cartSubtotal');if(cartQty===0){body.innerHTML='<div class="empty-cart">Your cart is empty.</div>';subtotal.textContent=formatEUR(0);return}subtotal.textContent=formatEUR(product.price*cartQty);body.innerHTML=`<div class="cart-item"><img src="${product.image}" alt="${product.name}"><div><h4>${product.name}</h4><p>${formatEUR(product.price)} · Plug: ${selectedPlug}</p></div><div class="qty"><button onclick="setCartQty(cartQty-1)">−</button><span>${cartQty}</span><button onclick="setCartQty(cartQty+1)">+</button></div></div><div class="cart-gifts"><b>Included for free today</b>${gifts.tools?'<div>✓ 12 Free Cleaning Tools</div>':''}${gifts.guarantee?'<div>✓ 90 Day Money Back Guarantee</div>':''}<div>✓ Free shipping</div></div>`}
+    function toggleGift(rowId,btn){const row=document.getElementById(rowId);btn.classList.toggle('active');row.classList.toggle('inactive');if(rowId==='giftTools')gifts.tools=btn.classList.contains('active');if(rowId==='giftGuarantee')gifts.guarantee=btn.classList.contains('active');renderCart()}
+
+    document.querySelectorAll('.add-cart-btn').forEach(btn=>btn.addEventListener('click',addToCart));
+    document.querySelectorAll('.checkout-btn').forEach(btn=>btn.addEventListener('click',()=>{if(cartQty===0){addToCart();return}window.location.href=CHECKOUT_URL}));
+    document.querySelectorAll('.plug').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.plug').forEach(b=>b.classList.remove('active'));btn.classList.add('active');selectedPlug=btn.textContent.trim();document.getElementById('selectedPlug').textContent=selectedPlug;renderCart()}));
+    document.querySelectorAll('.thumb').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.thumb').forEach(t=>t.classList.remove('active'));btn.classList.add('active');document.getElementById('mainImage').src=btn.querySelector('img').src}));
+  </script>
 </body>
 </html>
