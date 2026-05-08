@@ -209,22 +209,17 @@
     <section class="hero-shell">
       <div class="hero container" id="product">
         <div class="gallery-card">
-          <div class="main-media"><img id="mainImage" src="Vapolux_ugc.png" alt="VapoLux Steam Pro in bathroom"></div>
-          <div class="thumbs">
-            <button class="thumb active cover"><img src="Vapolux_ugc.png" alt="VapoLux lifestyle"></button>
-            <button class="thumb"><img src="vapolux-mainproduct.png" alt="VapoLux product"></button>
-            <button class="thumb"><img src="vapolux_12_accessories.png" alt="VapoLux accessories"></button>
-            <button class="thumb"><img src="vapolux_advertaccessories.png" alt="VapoLux accessories advert"></button>
-            <button class="thumb"><img src="vapolux_vs_others.png" alt="VapoLux comparison"></button>
-          </div>
+          <div class="main-media"><img id="mainImage" src="1vapolux-mainproduct.png" alt="VapoLux Steam Pro product"></div>
+        <div class="thumbs">
+          <button class="thumb active contain"><img src="1vapolux-mainproduct.png" alt="VapoLux Steam Pro"></button>
+          <button class="thumb contain"><img src="2VAPOLUX_INFO.png" alt="VapoLux product information"></button>
+          <button class="thumb contain"><img src="3vapolux_vs_others.png" alt="VapoLux compared with other products"></button>
+          <button class="thumb contain"><img src="vapolux_12_accessories.png" alt="VapoLux 12 accessories"></button>
+  3vapolux_vs_others.png="thumb contain"><img src="vapolux_advertaccessories.png" alt="VapoLux accessories advert"></button>
         </div>
+      </div>
 
-        <div class="product-card">
-          <div class="rating"><span class="stars">★★★★★</span><span>4.9/5 (1,073 Reviews)</span></div>
-          <h1>VapoLux Steam Pro</h1>
-          <p class="lead">Deep clean grease, grime, grout lines, sink edges and hard-to-reach spaces using powerful steam — without harsh chemicals.</p>
-          <ul class="checks">
-            <li><span class="check-dot">✓</span> Eliminates up to 99.9% of bacteria</li>
+      <div class="product-card">of bacteria</li>
             <li><span class="check-dot">✓</span> Scrub-free deep cleaning in seconds</li>
             <li><span class="check-dot">✓</span> Safe, chemical-free cleaning</li>
           </ul>
@@ -259,10 +254,7 @@
         <div>
           <h2>What If Deep Cleaning Didn’t Mean Endless Scrubbing?</h2>
           <p>VapoLux uses concentrated high-pressure steam to loosen grease, grime and buildup fast — making your kitchen, bathroom and hard-to-reach spaces feel easier to clean.</p>
-          <p>No harsh chemicals. No endless scrubbing. Just powerful steam cleaning.</p>
-        </div>
-      </div>
-    </section>
+          <p>No harsh chemicals. No endl<img src="2VAPOLUX_INFO.png" alt="VapoLux product information"> </section>
 
     <section class="section soft">
       <div class="split narrow">
@@ -284,7 +276,7 @@
         <h2 class="center-title">See How Easy It Is To Use</h2>
         <p>Fill, heat, choose the right accessory and clean with focused steam. These short demos show the product in real use.</p>
         <div class="video-grid">
-          <div class="video-card"><video src="vapolux_easytoset.mp4" autoplay muted loop playsinline preload="metadata"></video><h3>1. Fill & Heat</h3><p>Setup takes only a few minutes.</p></div>
+ 3vapolux_vs_others.pngvideo-card"><video src="vapolux_easytoset.mp4" autoplay muted loop playsinline preload="metadata"></video><h3>1. Fill & Heat</h3><p>Setup takes only a few minutes.</p></div>
           <div class="video-card"><video src="vapolux_easytoset2.mp4" autoplay muted loop playsinline preload="metadata"></video><h3>2. Clean with Steam</h3><p>Use the accessory that fits each surface.</p></div>
         </div>
       </div>
@@ -326,7 +318,7 @@
     <section class="section soft">
       <div class="split narrow">
         <div class="media-card"><img src="vapolux-unboxing.png" alt="VapoLux unboxing"></div>
-        <div><h2>The VapoLux 90-Day Risk-Free Guarantee</h2><p>Try VapoLux in your kitchen, bathroom, tile lines, sink edges, shower corners and hard-to-reach spots. If you don’t feel like VapoLux makes deep cleaning easier within 90 days of delivery, we’ll make it right.</p><p>✅ 90-day trial<br>✅ Use it on real messes<br>✅ Simple support if you need help<br>✅ Risk-free purchase</p></div>
+        <div><h2>The VapoLux 90-Day Risk-Free Guarantee</h2><p>Try VapoLux in your kitchen, bathroom, tile lines, sink edges, shower corners and hard-3vapolux_vs_others.pngu don’t feel like VapoLux makes deep cleaning easier within 90 days of delivery, we’ll make it right.</p><p>✅ 90-day trial<br>✅ Use it on real messes<br>✅ Simple support if you need help<br>✅ Risk-free purchase</p></div>
       </div>
     </section>
 
@@ -363,8 +355,7 @@
     let gifts = { tools:true, guarantee:true };
 
     function formatEUR(value){return new Intl.NumberFormat('es-ES',{style:'currency',currency:'EUR'}).format(value)}
-    function openCart(){document.getElementById('cartDrawer').classList.add('open');renderCart()}
-    function closeCart(){document.getElementById('cartDrawer').classList.remove('open')}
+    function openCart(){document.getElementById('cartDrawer').classList.add('open');rendconst product = { name:'VapoLux Steam Pro', price:49.90, image:'1vapolux-mainproduct.png' };open')}
     function setCartQty(qty){cartQty=Math.max(0,qty);updateCartCount();renderCart()}
     function updateCartCount(){const count=document.getElementById('cartCount');count.textContent=cartQty;count.style.display=cartQty>0?'flex':'none'}
     function addToCart(){cartQty=Math.max(1,cartQty+1);updateCartCount();document.querySelectorAll('.add-cart-btn').forEach(btn=>{btn.classList.add('added');btn.textContent='ADDED ✓';setTimeout(()=>{btn.classList.remove('added');btn.textContent='ADD TO CART'},900)});openCart()}
@@ -373,8 +364,14 @@
 
     document.querySelectorAll('.add-cart-btn').forEach(btn=>btn.addEventListener('click',addToCart));
     document.querySelectorAll('.checkout-btn').forEach(btn=>btn.addEventListener('click',()=>{if(cartQty===0){addToCart();return}window.location.href=CHECKOUT_URL}));
-    document.querySelectorAll('.plug').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.plug').forEach(b=>b.classList.remove('active'));btn.classList.add('active');selectedPlug=btn.textContent.trim();document.getElementById('selectedPlug').textContent=selectedPlug;renderCart()}));
-    document.querySelectorAll('.thumb').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.thumb').forEach(t=>t.classList.remove('active'));btn.classList.add('active');document.getElementById('mainImage').src=btn.querySelector('img').src}));
+    document.querySelectorAll('.plug').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.plug').forEach(b=>b.classList.remove('active'));btn.classList.add('active');selectedPlug=btn.textContent.trim();documendocument.querySelectorAll('.checkout-btn').forEach(btn=>btn.addEventListener('click',()=>{
+      if(cartQty===0){addToCart();return}
+      if(CHECKOUT_URL.includes('REPLACE_WITH_YOUR_STRIPE_PAYMENT_LINK')){
+        alert('Replace CHECKOUT_URL with your real Stripe Payment Link before launching.');
+        return;
+      }
+      window.location.href=CHECKOUT_URL;
+    }));document.querySelectorAll('.thumb').forEach(t=>t.classList.remove('active'));btn.classList.add('active');document.getElementById('mainImage').src=btn.querySelector('img').src}));
   </script>
 </body>
 </html>
